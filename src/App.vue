@@ -1,16 +1,14 @@
 <script setup>
 </script>
 <template>
-  <div class="header">
 
-    <div class="title">
+  <div class="header">
         <h1>Super Frog Scheduler</h1>
         <p>Add TCU Spirit to your event! <br>
-            Request Super Frog, TCU Cheerleaders, and  to your wedding, grad party, and more!
+            Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more!
         </p>
-    </div>
-
   </div>
+
   <div class = "body">
     <nav>
       <RouterLink to="/">Home</RouterLink>
@@ -30,11 +28,16 @@
   width: 100vw;
   margin: 0 auto;
   padding: 2rem;
+  background-color: blueviolet;
   font-weight: normal;
 }
-header {
+.header {
+  border-top: 50px solid transparent; /* Top border */
+  border-left: 50px solid transparent; /* Left border */
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin: 0; /* Adjusted margin */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: xx-large;
 }
 .logo {
   display: flex;
@@ -53,7 +56,7 @@ nav {
     display: inline-block;
     padding: 0 1rem;
     text-decoration: none;
-    color: hsla(160, 100%, 37%, 1);
+    color: white;
     transition: 0.4s;
     &:hover {
       background-color: hwb(160 0% 26% / 0.2);
