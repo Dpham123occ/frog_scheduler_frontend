@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <h1>Modify a Request</h1>
     </div>
 </template>
 
@@ -11,5 +11,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+h1 {
+    margin-top: 10px;
+    margin-left: 50px;
+    color: white;
+  }
 </style>

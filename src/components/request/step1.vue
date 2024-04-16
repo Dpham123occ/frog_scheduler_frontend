@@ -1,17 +1,17 @@
 <template>
     <div class="date-time-picker">
       <div class="form-group">
-        <label for="select-date">Select date</label>
+        <label for="select-date">Select date  </label>
         <input type="date" v-model="selectedDate" id="select-date">
       </div>
   
       <div class="form-group">
-        <label for="start-time">Select starting time</label>
+        <label for="start-time">Select starting time  </label>
         <input type="time" v-model="startTime" id="start-time" format="HH:mm:ss">
       </div>
   
       <div class="form-group">
-        <label for="end-time">Select ending time</label>
+        <label for="end-time">Select ending time  </label>
         <input type="time" v-model="endTime" id="end-time" format="HH:mm:ss">
       </div>
     </div>
