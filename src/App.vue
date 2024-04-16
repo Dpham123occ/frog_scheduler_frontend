@@ -33,7 +33,6 @@
       <router-view></router-view>
     </div>
   </div>
-  
 </template>
 
 <style scoped>
@@ -63,7 +62,9 @@
   color: white;
 }
 .logo {
-  justify-content: center;
+  position: absolute; /* Set position to absolute */
+  top: 1px; /* Adjust top position */
+  right: 20px; /* Adjust right position */
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -80,7 +81,7 @@
   background-color: #fff;
   border-radius: 2rem;
   padding: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 50px;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 

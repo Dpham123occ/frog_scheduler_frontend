@@ -79,9 +79,11 @@ export default {
     },
     goToPreviousStep() {
       if (this.currentStep > 1) {
+        // Set current step as not active and not completed
         this.steps[this.currentStep - 1].isActive = false;
+        this.steps[this.currentStep - 1].isCompleted = false;
+        // Set previous step as active
         this.steps[this.currentStep - 2].isActive = true;
-        this.steps[this.currentStep - 2].isCompleted = false;
         this.currentStep--;
       }
     },
@@ -91,6 +93,7 @@ export default {
   },
 };
 </script>
+
 
 <style lang="scss" scoped>
 .step-container {

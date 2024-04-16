@@ -2,19 +2,18 @@
     <div class="date-time-picker">
       <div class="form-group">
         <label for="select-date">Select date</label>
-        <datepicker v-model="selectedDate" id="select-date"></datepicker>
+        <input type="date" v-model="selectedDate" id="select-date">
       </div>
   
       <div class="form-group">
         <label for="start-time">Select starting time</label>
-        <timepicker v-model="startTime" id="start-time" format="HH:mm:ss"></timepicker>
+        <input type="time" v-model="startTime" id="start-time" format="HH:mm:ss">
       </div>
   
       <div class="form-group">
         <label for="end-time">Select ending time</label>
-        <timepicker v-model="endTime" id="end-time" format="HH:mm:ss"></timepicker>
+        <input type="time" v-model="endTime" id="end-time" format="HH:mm:ss">
       </div>
-
     </div>
   </template>
   
@@ -32,7 +31,11 @@
   
   <style scoped>
   .date-time-picker {
-    /* Add styles here to match the look and feel of your form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
   }
   
   .form-group {
