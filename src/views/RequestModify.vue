@@ -1,6 +1,8 @@
 <template>
     <div>
         <h1>Modify a Request</h1>
+        <input type="text" Please enter >
+        <button> submit </button>
     </div>
 </template>
 
