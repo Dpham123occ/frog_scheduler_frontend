@@ -14,11 +14,7 @@
         <label for="end-time">Select ending time</label>
         <timepicker v-model="endTime" id="end-time" format="HH:mm:ss"></timepicker>
       </div>
-  
-      <div class="button-container">
-        <button @click="goToPreviousStep">Back</button>
-        <button @click="goToNextStep">Forward</button>
-      </div>
+
     </div>
   </template>
   
@@ -31,14 +27,6 @@
         endTime: '09:00:00',
       };
     },
-    methods: {
-      goToPreviousStep() {
-        this.$emit('change-step', this.currentStep - 1);
-      },
-      goToNextStep() {
-        this.$emit('change-step', this.currentStep + 1);
-      },
-    },
   };
   </script>
   
@@ -50,14 +38,6 @@
   .form-group {
     margin-bottom: 1rem;
   }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  button {
-    /* Reuse button styles from previous examples or create new ones */
-  }
+
   </style>
   

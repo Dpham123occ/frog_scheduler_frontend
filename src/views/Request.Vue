@@ -11,12 +11,13 @@
         <div class="step-number">{{ step.number }}</div>
         <div class="step-label">{{ step.label }}</div>
       </div>
-
     </div>
 
+    <!-- Conditionally render the step1 component -->
     <div v-if="currentStep === 1">
-      <date-time-picker @change-step="handleStepChange"></date-time-picker>
+      <step1 @change-step="handleStepChange"></step1>
     </div>
+
     <!-- Add your form components or other content here -->
     <div class="button-container">
       <button @click="goToPreviousStep" :disabled="currentStep === 1">
@@ -30,7 +31,12 @@
 </template>
 
 <script>
+import Step1 from '../components/request/step1.vue'; // Import the step1 component
+
 export default {
+  components: {
+    Step1 // Register the step1 component
+  },
   data() {
     return {
       currentStep: 1,
@@ -77,10 +83,10 @@ export default {
         this.steps[this.currentStep - 2].isActive = true;
         this.steps[this.currentStep - 2].isCompleted = false;
         this.currentStep--;
-      } 
-      if (this.currentStep == 0) {
-
       }
+    },
+    handleStepChange(step) {
+      this.currentStep = step;
     },
   },
 };

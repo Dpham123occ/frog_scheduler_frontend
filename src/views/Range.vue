@@ -10,7 +10,7 @@
     data() {
       return {
         // Add your Google Maps API key here
-        googleMapsApiKey: 'AIzaSyAAwBPecFmf0co-0ua1pg2tA4wXMfIn3R4',
+        // googleMapsApiKey: 'AIzaSyAAwBPecFmf0co-0ua1pg2tA4wXMfIn3R4',
       }
     },
     methods: {
