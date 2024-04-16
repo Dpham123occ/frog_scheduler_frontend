@@ -1,36 +1,39 @@
 <template>
-  <div class="header">
-    <h1>Super Frog Scheduler</h1>
-    <img class = logo src="./images/super_frog.jpeg">
+  <div>
+    <div class="header">
+      <h1>Super Frog Scheduler</h1>
+      <img class = logo src="./images/super_frog.jpeg">
+    </div>
+    <div class="intro">
+      <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
+    </div>
+    <div class="body">
+      <nav class="nav-bar">
+        <div class="nav-item">
+          <RouterLink to="/pricing">
+            <span>Pricing</span>
+          </RouterLink>
+        </div>
+        <div class="nav-item">
+          <RouterLink to="/range">
+            <span>Range</span>
+          </RouterLink>
+        </div>
+        <div class="nav-item">
+          <RouterLink to="/request">
+            <span>Request</span>
+          </RouterLink>
+        </div>
+        <div class="nav-item">
+          <RouterLink to="/modify">
+            <span>Modify a request</span>
+          </RouterLink>
+        </div>
+      </nav>
+      <router-view></router-view>
+    </div>
   </div>
-  <div class="intro">
-    <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
-  </div>
-  <div class="body">
-    <nav class="nav-bar">
-      <div class="nav-item">
-        <RouterLink to="/pricing">
-          <span>Pricing</span>
-        </RouterLink>
-      </div>
-      <div class="nav-item">
-        <RouterLink to="/range">
-          <span>Range</span>
-        </RouterLink>
-      </div>
-      <div class="nav-item">
-        <RouterLink to="/request">
-          <span>Request</span>
-        </RouterLink>
-      </div>
-      <div class="nav-item">
-        <RouterLink to="/modify">
-          <span>Modify a request</span>
-        </RouterLink>
-      </div>
-    </nav>
-    <router-view></router-view>
-  </div>
+  
 </template>
 
 <style scoped>
