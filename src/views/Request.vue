@@ -71,7 +71,6 @@ export default {
   methods: {
     goToNextStep() {
       if (this.currentStep < this.steps.length) {
-        this.steps[this.currentStep - 1].isActive = false;
         this.steps[this.currentStep - 1].isCompleted = true;
         this.steps[this.currentStep].isActive = true;
         this.currentStep++;
@@ -96,6 +95,12 @@ export default {
 
 
 <style lang="scss" scoped>
+
+h1 {
+  margin-top: 10px;
+  margin-left: 50px;
+  color: white;
+}
 .step-container {
   display: flex;
   justify-content: center;
