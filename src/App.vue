@@ -1,26 +1,35 @@
-<script setup>
-</script>
 <template>
-
   <div class="header">
-        <h1>Super Frog Scheduler</h1>
-        <p>Add TCU Spirit to your event! <br>
-            Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more!
-        </p>
+    <h1>Super Frog Scheduler</h1>
   </div>
-
-  <div class = "body">
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/pricing">Pricing</RouterLink>
-      <RouterLink to="/range">Range</RouterLink>
-      <RouterLink to="/request">Request</RouterLink>
-      <RouterLink to="/modify">Modify a Request</RouterLink>
+  <div class="intro">
+    <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
+  </div>
+  <div class="body">
+    <nav class="nav-bar">
+      <div class="nav-item">
+        <RouterLink to="/pricing">
+          <span>Pricing</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/range">
+          <span>Range</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/request">
+          <span>Request</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/modify">
+          <span>Modify a request</span>
+        </RouterLink>
+      </div>
     </nav>
+    <router-view></router-view>
   </div>
-  
-  <RouterView></RouterView>
 </template>
 
 <style scoped>
@@ -31,13 +40,23 @@
   background-color: blueviolet;
   font-weight: normal;
 }
+
 .header {
   border-top: 50px solid transparent; /* Top border */
   border-left: 50px solid transparent; /* Left border */
   line-height: 1.5;
   margin: 0; /* Adjusted margin */
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: xx-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.intro {
+  border-top: 50px solid transparent; /* Top border */
+  border-left: 50px solid transparent; /* Left border */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  color: white;
 }
 .logo {
   display: flex;
@@ -48,25 +67,42 @@
   justify-content: center;
   margin-top: 1rem;
 }
-nav {
+
+.nav-bar {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  a {
-    display: inline-block;
-    padding: 0 1rem;
-    text-decoration: none;
-    color: white;
-    transition: 0.4s;
-    &:hover {
-      background-color: hwb(160 0% 26% / 0.2);
-    }
-    &:first-of-type {
-      border: 0;
-    }
-  }
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
-.router-link-active {
-  background-color: orange;
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-item a:hover {
+  color: #666;
+}
+
+.nav-item img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.nav-item span {
+  font-size: 1rem;
 }
 </style>
