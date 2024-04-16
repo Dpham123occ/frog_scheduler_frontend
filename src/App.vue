@@ -1,6 +1,7 @@
 <template>
   <div class="header">
     <h1>Super Frog Scheduler</h1>
+    <img class = logo src="./images/super_frog.jpeg">
   </div>
   <div class="intro">
     <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
@@ -59,8 +60,10 @@
   color: white;
 }
 .logo {
-  display: flex;
   justify-content: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 .greeting {
   display: flex;
