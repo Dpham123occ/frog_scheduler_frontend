@@ -1,37 +1,35 @@
 <template>
-  <div>
-    <div class="header">
-      <h1>Super Frog Scheduler</h1>
-      <img class = logo src="./images/super_frog.jpeg">
-    </div>
-    <div class="intro">
-      <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
-    </div>
-    <div class="body">
-      <nav class="nav-bar">
-        <div class="nav-item">
-          <RouterLink to="/pricing">
-            <span>Pricing</span>
-          </RouterLink>
-        </div>
-        <div class="nav-item">
-          <RouterLink to="/range">
-            <span>Range</span>
-          </RouterLink>
-        </div>
-        <div class="nav-item">
-          <RouterLink to="/request">
-            <span>Request</span>
-          </RouterLink>
-        </div>
-        <div class="nav-item">
-          <RouterLink to="/modify">
-            <span>Modify a request</span>
-          </RouterLink>
-        </div>
-      </nav>
-      <router-view></router-view>
-    </div>
+  <div class="header">
+    <h1>Super Frog Scheduler</h1>
+    <img class = logo src="./images/super_frog.jpeg">
+  </div>
+  <div class="intro">
+    <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
+  </div>
+  <div class="body">
+    <nav class="nav-bar">
+      <div class="nav-item">
+        <RouterLink to="/pricing">
+          <span>Pricing</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/range">
+          <span>Range</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/request">
+          <span>Request</span>
+        </RouterLink>
+      </div>
+      <div class="nav-item">
+        <RouterLink to="/modify">
+          <span>Modify a request</span>
+        </RouterLink>
+      </div>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -62,9 +60,7 @@
   color: white;
 }
 .logo {
-  position: absolute; /* Set position to absolute */
-  top: 1px; /* Adjust top position */
-  right: 20px; /* Adjust right position */
+  justify-content: center;
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -81,7 +77,7 @@
   background-color: #fff;
   border-radius: 2rem;
   padding: 0.5rem;
-  margin-top: 50px;
+  margin-top: 2rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
