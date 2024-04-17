@@ -1,111 +1,158 @@
 <template>
-  <div class="header">
-    <h1>Super Frog Scheduler</h1>
-    <img class = logo src="./images/super_frog.jpeg">
-  </div>
-  <div class="intro">
-    <p>Add TCU Spirit to your event! <br> Request Super Frog, TCU Cheerleaders, and showgirls to your wedding, grad party, and more! </p>
-  </div>
-  <div class="body">
-    <nav class="nav-bar">
-      <div class="nav-item">
-        <RouterLink to="/pricing">
-          <span>Pricing</span>
-        </RouterLink>
+  <router-view v-if="$route.path != '/'"></router-view>
+
+  <div v-if="$route.path == '/'" id="app">
+      <title>Landing Page</title>
+      
+      <div class="landing-page">
+          <div class="profile-image"></div>
+          <h1 class="heading">SuperFrog Scheduler</h1>
+
+          <p class="description">
+              Add TCU Spirit to your event <br>
+              Request SuperFrog, TCU Cheerleader, & Showgirls to your <br>
+              wedding, grad party and more!
+          </p>
+
+          <div class="button-container">
+              <button class="button" v-on:click="goToPricing"> Pricing</button>
+              <button class="button" v-on:click="goToRange"> Range</button>
+              <button class="button" v-on:click="goToRequest"> Request</button>
+              <button class="button" v-on:click="goToModifyRequest"> Modify a request</button>
+          </div>
       </div>
-      <div class="nav-item">
-        <RouterLink to="/range">
-          <span>Range</span>
-        </RouterLink>
-      </div>
-      <div class="nav-item">
-        <RouterLink to="/request">
-          <span>Request</span>
-        </RouterLink>
-      </div>
-      <div class="nav-item">
-        <RouterLink to="/modify">
-          <span>Modify a request</span>
-        </RouterLink>
-      </div>
-    </nav>
-    <router-view></router-view>
+
   </div>
 </template>
 
-<style scoped>
-#app {
-  width: 100vw;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: blueviolet;
-  font-weight: normal;
+<script>
+
+
+export default {
+  name: 'App',
+  methods: {
+      goToPricing() {
+          this.$router.push('/pricing')
+      },
+      goToRange() {
+          this.$router.push('/range')
+      },
+      goToRequest() {
+          this.$router.push('/step1')
+      },
+      goToModifyRequest() {
+          this.$router.push('/modify')
+      },
+      goToLogin() {
+          this.$router.push('/login')
+      }
+  }
 }
 
-.header {
-  border-top: 50px solid transparent; /* Top border */
-  border-left: 50px solid transparent; /* Left border */
-  line-height: 1.5;
-  margin: 0; /* Adjusted margin */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+</script>
+
+<style>
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+}
+
+
+
+body {
+  background-color: #4d2279;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.button {
+  margin: 10px;
+  padding: 20px 40px;
   font-size: 20px;
-  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  width: 25%;
+  border-radius: 40px;
 }
 
-.intro {
-  border-top: 50px solid transparent; /* Top border */
-  border-left: 50px solid transparent; /* Left border */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 15px;
-  color: white;
+.login-text {
+  position: absolute;
+  left: 32.5%;
+  bottom: 80px;
 }
-.logo {
-  justify-content: center;
-  height: 200px;
-  width: 200px;
+
+.login-button {
+  margin: 10px;
+  padding: 20px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  width: 10%;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button i {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.profile-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  background-image: url('images/super_frog.jpeg');
+  background-size: cover;
+  background-position: center;
 }
-.greeting {
+
+.heading {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 50px;
+  font-weight: 2000px;
+}
+
+.description {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  margin-top: 50px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.logincontainer {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 2rem;
-  padding: 0.5rem;
-  margin-top: 2rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  margin: 0 1rem;
-}
-
-.nav-item a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.nav-item a:hover {
-  color: #666;
-}
-
-.nav-item img {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.5rem;
-}
-
-.nav-item span {
-  font-size: 1rem;
+  align-self: bot;
 }
 </style>
+    

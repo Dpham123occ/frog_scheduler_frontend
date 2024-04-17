@@ -2,23 +2,15 @@
   <div>
     <h1>Request Form</h1>
     <div class="step-container">
-      <div
-        class="step-item"
-        v-for="step in steps"
-        :key="step.number"
-        :class="{ active: step.isActive, completed: step.isCompleted }"
-      >
+      <div class="step-item" v-for="step in steps" :key="step.number"
+        :class="{ active: step.isActive, completed: step.isCompleted }">
         <div class="step-number">{{ step.number }}</div>
         <div class="step-label">{{ step.label }}</div>
       </div>
     </div>
 
-    <!-- Conditionally render the step1 component -->
-    <div v-if="currentStep === 1">
-      <step1 @change-step="handleStepChange"></step1>
-    </div>
+    <router-view @change-step="handleStepChange"></router-view>
 
-    <!-- Add your form components or other content here -->
     <div class="button-container">
       <button @click="goToPreviousStep" :disabled="currentStep === 1">
         Back
@@ -31,12 +23,9 @@
 </template>
 
 <script>
-import Step1 from '../components/request/step1.vue'; // Import the step1 component
+import router from '../../router';
 
 export default {
-  components: {
-    Step1 // Register the step1 component
-  },
   data() {
     return {
       currentStep: 1,
@@ -72,22 +61,33 @@ export default {
     goToNextStep() {
       if (this.currentStep < this.steps.length) {
         this.steps[this.currentStep - 1].isCompleted = true;
-        this.steps[this.currentStep].isActive = true;
+        this.steps[this.currentStep - 1].isActive = false;
         this.currentStep++;
+        this.steps[this.currentStep - 1].isActive = true;
       }
     },
     goToPreviousStep() {
       if (this.currentStep > 1) {
-        // Set current step as not active and not completed
         this.steps[this.currentStep - 1].isActive = false;
-        this.steps[this.currentStep - 1].isCompleted = false;
-        // Set previous step as active
-        this.steps[this.currentStep - 2].isActive = true;
         this.currentStep--;
+        this.steps[this.currentStep - 1].isActive = true;
       }
     },
     handleStepChange(step) {
       this.currentStep = step;
+
+      // Define the mapping from step number to route name
+      const stepToRouteName = {
+        1: '/step1',
+        2: '/step2',
+        3: '/step3',
+        4: '/step4'
+      };
+
+      // Get the route name based on the current step
+      const routeName = stepToRouteName[step];
+      router.push({ name: routeName });
+     
     },
   },
 };
@@ -95,12 +95,12 @@ export default {
 
 
 <style lang="scss" scoped>
-
 h1 {
   margin-top: 10px;
   margin-left: 50px;
   color: white;
 }
+
 .step-container {
   display: flex;
   justify-content: center;
@@ -124,6 +124,7 @@ h1 {
   color: #6a1b9a;
   border-radius: 50%;
   font-weight: bold;
+
   &.completed {
     background-color: green;
     color: #fff;
@@ -144,6 +145,7 @@ h1 {
 .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -156,9 +158,11 @@ button {
   border: none;
   border-radius: 5px;
   outline: none;
+
   &:hover {
     background-color: darken(#6a1b9a, 10%);
   }
+
   &:disabled {
     background-color: lighten(#6a1b9a, 10%);
     cursor: not-allowed;
