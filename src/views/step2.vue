@@ -33,11 +33,6 @@
           <label for="event-description">Event Description</label>
           <textarea id="event-description" v-model="eventDescription"></textarea>
         </div>
-  
-        <!-- Submit Button -->
-        <div class="form-group">
-          <button type="submit">Submit</button>
-        </div>
       </form>
     </div>
   </template>

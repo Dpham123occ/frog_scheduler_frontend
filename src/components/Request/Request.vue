@@ -2,16 +2,22 @@
   <div>
     <h1>Request Form</h1>
     <div class="step-container">
-      <div class="step-item" v-for="step in steps" :key="step.number"
-        :class="{ active: step.isActive, completed: step.isCompleted }">
+      <div
+        class="step-item"
+        v-for="step in steps"
+        :key="step.number"
+        :class="{ active: step.isActive, completed: step.isCompleted }"
+      >
         <div class="step-number">{{ step.number }}</div>
         <div class="step-label">{{ step.label }}</div>
       </div>
     </div>
 
-    <router-view @change-step="handleStepChange"></router-view>
+    <!-- Router view for dynamic step components -->
+    <router-view :key="currentStep"></router-view>
 
     <div class="button-container">
+      <button @click="goHome">Home</button>
       <button @click="goToPreviousStep" :disabled="currentStep === 1">
         Back
       </button>
@@ -58,12 +64,16 @@ export default {
     };
   },
   methods: {
+    goHome() {
+      router.push('/');
+    },
     goToNextStep() {
       if (this.currentStep < this.steps.length) {
         this.steps[this.currentStep - 1].isCompleted = true;
         this.steps[this.currentStep - 1].isActive = false;
         this.currentStep++;
         this.steps[this.currentStep - 1].isActive = true;
+        router.push(`/step${this.currentStep}`);
       }
     },
     goToPreviousStep() {
@@ -71,28 +81,12 @@ export default {
         this.steps[this.currentStep - 1].isActive = false;
         this.currentStep--;
         this.steps[this.currentStep - 1].isActive = true;
+        router.push(`/step${this.currentStep}`);
       }
-    },
-    handleStepChange(step) {
-      this.currentStep = step;
-
-      // Define the mapping from step number to route name
-      const stepToRouteName = {
-        1: '/step1',
-        2: '/step2',
-        3: '/step3',
-        4: '/step4'
-      };
-
-      // Get the route name based on the current step
-      const routeName = stepToRouteName[step];
-      router.push({ name: routeName });
-     
     },
   },
 };
 </script>
-
 
 <style lang="scss" scoped>
 h1 {
