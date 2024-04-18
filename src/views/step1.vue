@@ -1,7 +1,8 @@
 <template>
   <div class="date">
     Select date
-    <VueDatePicker :enable-time-picker="false" v-model="eventInfo.selectedDate" :format="formatDate" @closed="updateDate" />
+    <VueDatePicker :enable-time-picker="false" v-model="eventInfo.selectedDate" :format="formatDate"
+      @closed="updateDate" />
   </div>
   <div class="time">
     <span>Select starting time</span>
@@ -77,15 +78,27 @@ export default {
 
 </script>
 <style scoped>
-.date-time-picker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+VueDatePicker {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.form-group {
-  margin-bottom: 1rem;
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
 }
 </style>

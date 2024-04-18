@@ -24,6 +24,9 @@
       <button @click="goToNextStep" :disabled="currentStep === steps.length">
         Next
       </button>
+      <button @click="submitOrder" :disabled="currentStep !== 4">
+        Submit Order
+      </button>
     </div>
   </div>
 </template>
@@ -34,6 +37,7 @@ import Step1 from '../../views/step1.vue';
 import Step2 from '../../views/step2.vue';
 import Step3 from '../../views/step3.vue';
 import Step4 from '../../views/step4.vue';
+import Receipt from '../Receipt/Receipt.vue';
 
 export default {
   data() {
@@ -108,12 +112,16 @@ export default {
     sendData(data) {
       this.eventInfo = data;
     },
+    submitOrder() {
+      router.push(`/receipt`);
+    }
   },
   components: {
     Step1,
     Step2,
     Step3,
-    Step4
+    Step4,
+    Receipt
   }
 };
 </script>
@@ -171,6 +179,7 @@ h1 {
   justify-content: center;
   align-self: center;
   align-items: center;
+  width: 100%;
 }
 
 button {

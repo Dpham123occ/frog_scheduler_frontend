@@ -8,6 +8,7 @@ import Step1 from '../views/step1.vue';
 import Step2 from '../views/step2.vue';
 import Step3 from '../views/step3.vue';
 import Step4 from '../views/step4.vue';
+import Receopt from '../components/Receipt/Receipt.vue';
 
 
 

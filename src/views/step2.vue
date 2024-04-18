@@ -14,15 +14,6 @@
         <input type="text" id="contact-first-name" v-model="eventInfo.contactFirstName" @input="updateParent">
       </div>
 
-      <div class="dropdown-box">
-      <label for="dropdown">Event Type</label>
-        <select id="dropdown" v-model="eventInfo.eventType" @change="updateParent">
-          <option value="TCU">TCU</option>
-          <option value="PUBLIC">Public/Non-profit</option>
-          <option value="PRIVATE">Private/Residential</option>
-        </select>
-      </div>
-
       <div class="form-group">
         <label for="contact-last-name">Contact Last Name</label>
         <input type="text" id="contact-last-name" v-model="eventInfo.contactLastName" @input="updateParent">
@@ -42,6 +33,15 @@
       <div class="form-group">
         <label for="event-title">Event Title</label>
         <input type="text" id="event-title" v-model="eventInfo.eventTitle" @input="updateParent">
+      </div>
+
+      <div class="dropdown-box">
+      <label for="dropdown">Event Type</label>
+        <select id="dropdown" v-model="eventInfo.eventType" @change="updateParent">
+          <option value="TCU">TCU</option>
+          <option value="PUBLIC">Public/Non-profit</option>
+          <option value="PRIVATE">Private/Residential</option>
+        </select>
       </div>
 
       <div class="form-group">
