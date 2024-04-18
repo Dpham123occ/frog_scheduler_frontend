@@ -24,6 +24,7 @@
   .terms-heading {
     font-size: 24px;
     margin-bottom: 20px;
+    color: white;
   }
   
   .terms-list {

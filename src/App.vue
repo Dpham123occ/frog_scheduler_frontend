@@ -89,29 +89,6 @@ body {
   border-radius: 40px;
 }
 
-.login-text {
-  position: absolute;
-  left: 32.5%;
-  bottom: 80px;
-}
-
-.login-button {
-  margin: 10px;
-  padding: 20px 40px;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  width: 10%;
-  border-radius: 40px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .button i {
   font-size: 50px;
   margin-bottom: 10px;
