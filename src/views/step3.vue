@@ -9,6 +9,10 @@
         <li>Even after an event is confirmed, it is still subject to immediate cancellation due to a TCU Athletic Department function, weather, or an emergency. Immediate notice will be given in the event of cancellation.</li>
         <li>The SuperFrog suit is NOT rented out to a third party</li>
       </ul>
+      <div class="checkbox">
+        <input type="checkbox">
+        <label>    I agree to the terms and conditions of a TCU Spirit Appearance</label>  
+        </div>
     </div>
   </template>
   
@@ -33,6 +37,7 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 10px;
+    color: white;
   }
   </style>
   
